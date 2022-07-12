@@ -27,9 +27,9 @@ const process ={
         // console.log(response);
         return res.json(response);
     },
-    register: (req, res)=>{
+    register: async (req, res)=>{
         const user = new User(req.body);//User.js의 body로 넘어감
-        const response = user.register();
+        const response = await user.register();
         return res.json(response);
     }
 };
