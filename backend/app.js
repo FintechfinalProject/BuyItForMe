@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./models/users');
+var usersRouter = require('./models/userStorage');
 
 var app = express();
 // use는 미츨웨어를 저장해주는 메서드

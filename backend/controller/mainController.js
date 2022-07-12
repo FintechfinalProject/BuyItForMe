@@ -1,7 +1,10 @@
 "use strict"
 
+const UserStorage = require("../models/UserStorage");
 // import axios from "axios";
 // import pool from "../models/db.js"
+
+
 
 const output = {
     main : (req, res) =>{
@@ -13,29 +16,25 @@ const output = {
     },
 }
 
-const users ={
-    id:["123", "1234", "12345"],
-    password: ["123", "1234", "12345"],
-};
 
 const process ={
     login: (req, res) =>{
         const id = req.body.id,
             password = req.body.password
         
+        const users = UserStorage.getUsers("id", "password");
+
+        const response = {};
         if(users.id.includes(id)){//프론트에서 전달받은 id
             const idx = users.id.indexOf(id);
             if (users.password[idx]===password){
-                return res.json({//프론트로 응답을 줌
-                    success : true,//success데이터 보냄?
-                });
+                response.success = true
+                return res.json(response);//프론트로 응답을 줌 success데이터 보냄?
             }
         }
-
-        return res.json({
-            success : true,
-            msg: "로그인 실패",
-        });
+        response.success = false
+        response.msg = "로그인 실패"
+        return res.json(response);
     }
 };
 //백엔드라 볼 수 있음
