@@ -6,5 +6,8 @@ router.get('/', ctrl.output.main)
 
 router.get('/login', ctrl.output.login)
 router.post('/login', ctrl.process.login)
+// javascrips/login.js에서 사용되는 서버
 
+
+// 서버라고 생각하면 됨
 module.exports = router;

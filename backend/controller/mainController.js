@@ -13,12 +13,32 @@ const output = {
     },
 }
 
+const users ={
+    id:["123", "1234", "12345"],
+    password: ["123", "1234", "12345"],
+};
 
 const process ={
     login: (req, res) =>{
-        console.log(req.body);
+        const id = req.body.id,
+            password = req.body.password
+        
+        if(users.id.includes(id)){//프론트에서 전달받은 id
+            const idx = users.id.indexOf(id);
+            if (users.password[idx]===password){
+                return res.json({//프론트로 응답을 줌
+                    success : true,//success데이터 보냄?
+                });
+            }
+        }
+
+        return res.json({
+            success : true,
+            msg: "로그인 실패",
+        });
     }
-}
+};
+//백엔드라 볼 수 있음
 
 
 

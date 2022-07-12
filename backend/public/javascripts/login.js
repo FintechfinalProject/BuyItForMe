@@ -17,10 +17,23 @@ function login(){
     fetch("/login", {
         method:"POST",
         headers: {
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
         },
-        body: JSON.stringify(req)//JSON 형태로 바디 안에 데이터를 넣어서 전달
-    });//HTML의 로그인 정보를 서버로 던짐 API
+        body: JSON.stringify(req),//JSON 형태로 바디 안에 데이터를 넣어서 전달
+    })                            //mainController.js로 id/password(req) 전달?
+    .then((res) => res.json())    //success데이터 받아서 띄움?
+    .then((res) => {              //HTML의 로그인 정보를 서버로 던짐 API?
+        if (res.success){
+            location.href="/";
+        }else{
+            alert(res.msg)
+        }
+    })
+    .catch((err)=>{
+        console.error(new Error("로그인 중 에러 발생"));//에러를 띄움
+    })
+    
 };
 
+//프론트의 HTML과 연결된 javascript
 console.log(id);
