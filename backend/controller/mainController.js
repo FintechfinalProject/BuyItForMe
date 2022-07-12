@@ -5,7 +5,7 @@ const User = require("../models/User");
 // import pool from "../models/db.js"
 
 
-
+//home에 있는 ejs파일 읽어오기
 const output = {
     main : (req, res) =>{
         res.render("home/index")
@@ -14,6 +14,9 @@ const output = {
     login : (req, res)=>{
         res.render('home/login');
     },
+    register : (req,res)=>{
+        res.render("home/register")
+    }
 }
 
 
