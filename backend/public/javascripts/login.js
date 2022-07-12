@@ -1,5 +1,7 @@
 "use strict";
 
+const { application, json } = require("express");
+
 const id = document.querySelector("#id"),
     password = document.querySelector("#password"),
     loginBtn = document.querySelector("button");
@@ -12,7 +14,13 @@ function login(){
         password : password.value,
     };
 
-    console.log(req);
+    fetch("/login", {
+        method:"POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(req)//JSON 형태로 바디 안에 데이터를 넣어서 전달
+    })//HTML의 로그인 정보를 서버로 던짐
 };
 
 console.log(id);
