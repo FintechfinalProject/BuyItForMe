@@ -26,17 +26,11 @@ const process ={
         const response = user.login();
         // console.log(response);
         return res.json(response);
-        // const response = {};
-        // if(users.id.includes(id)){//프론트에서 전달받은 id
-        //     const idx = users.id.indexOf(id);
-        //     if (users.password[idx]===password){
-        //         response.success = true
-        //         return res.json(response);//프론트로 응답을 줌 success데이터 보냄?
-        //     }
-        // }
-        // response.success = false
-        // response.msg = "로그인 실패"
-        // return res.json(response);
+    },
+    register: (req, res)=>{
+        const user = new User(req.body);//User.js의 body로 넘어감
+        const response = user.register();
+        return res.json(response);
     }
 };
 //백엔드라 볼 수 있음

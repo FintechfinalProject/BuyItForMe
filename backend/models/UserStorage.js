@@ -1,19 +1,13 @@
-// var express = require('express');
-// var router = express.Router();
-// 
-// /* GET users listing. */
-// router.get('/', function(req, res, next) {
-  // res.send('respond with a resource');
-// });
-// 
-// module.exports = router;
 "use script"
 
 class UserStorage{
   static #users ={ //은닉화 ->undefind
     id:["123", "1234", "12345"],
     password: ["123", "1234", "12345"],
-    name: ["정", "태", "환"]
+    name: ["정", "태", "환"],
+    account:[],
+    bank:[],
+    birth:[],
   };
   
   static getUsers(...fields) {
@@ -38,6 +32,19 @@ class UserStorage{
     }, {});
 
     return userInfo
+  }
+  static save(userInfo){
+    const users = this.#users;
+    users.id.push(userInfo.id);
+    users.name.push(userInfo.name);
+    users.birth.push(userInfo.birth);
+    users.password.push(userInfo.password);
+    users.bank.push(userInfo.bank);
+    users.account.push(userInfo.account);
+    // console.log(users);
+    return { success : true };
+  
+
   }
 }
 
