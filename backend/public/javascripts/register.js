@@ -4,17 +4,28 @@
 
 const id = document.querySelector("#id"),
     password = document.querySelector("#password"),
-    loginBtn = document.querySelector("#button");
+    confirmPassword = document.querySelector("#confirm-password"),
+    account = document.querySelector("#account"),
+    bank = document.querySelector("#bank"),
+    name = document.querySelector("#name"),
+    birth = document.querySelector("#birth"),
+    registerBtn = document.querySelector("#button");
 
-loginBtn.addEventListener("click", login)//login은 함수-> 함수 설정 해야함
+registerBtn.addEventListener("click", register)//register은 함수-> 함수 설정 해야함
 
-function login(){
+function register(){
     const req = {
         id: id.value,
         password : password.value,
+        confirmPassword : confirmPassword.value,
+        account : account.value,
+        bank : bank.value,
+        name : name.value,
+        birth : birth.value,
     };
+    // console.log(req)
 
-    fetch("/login", {
+    fetch("/register", {
         method:"POST",
         headers: {
             "Content-Type" : "application/json",
@@ -24,15 +35,14 @@ function login(){
     .then((res) => res.json())    //success데이터 받아서 띄움?
     .then((res) => {              //HTML의 로그인 정보를 서버로 던짐 API?
         if (res.success){
-            location.href="/";
+            location.href="/login";
         }else{
             alert(res.msg)
         }
     })
     .catch((err)=>{
-        console.error(new Error("로그인 중 에러 발생"));//에러를 띄움
+        console.error(new Error("회원가입 중 에러 발생"));//에러를 띄움
     })
-    
 };
 
 //프론트의 HTML과 연결된 javascript
