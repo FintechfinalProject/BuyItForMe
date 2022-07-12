@@ -1,6 +1,6 @@
 "use strict";
 
-const { application, json } = require("express");
+// const { application, json } = require("express");
 
 const id = document.querySelector("#id"),
     password = document.querySelector("#password"),
@@ -20,7 +20,7 @@ function login(){
             "Content-Type" : "application/json"
         },
         body: JSON.stringify(req)//JSON 형태로 바디 안에 데이터를 넣어서 전달
-    })//HTML의 로그인 정보를 서버로 던짐
+    });//HTML의 로그인 정보를 서버로 던짐 API
 };
 
 console.log(id);

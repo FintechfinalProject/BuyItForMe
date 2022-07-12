@@ -1,3 +1,4 @@
+"use strict"
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -37,5 +38,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const bodyParser = require("body-parser")
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}));
 
 module.exports = app;
