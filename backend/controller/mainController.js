@@ -21,8 +21,8 @@ const process ={
     login: (req, res) =>{
         const user = new User(req.body);//User.js의 body로 넘어감
         const response = user.login();
-        console.log(response);
-
+        // console.log(response);
+        return res.json(response);
         // const response = {};
         // if(users.id.includes(id)){//프론트에서 전달받은 id
         //     const idx = users.id.indexOf(id);
