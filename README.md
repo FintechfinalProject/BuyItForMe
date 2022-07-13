@@ -15,7 +15,7 @@
 
 ## 🔗 2. 구현
 <https://youtu.be/8oIu0Yo7HPo>
-<iframe width="1440" height="513" src="https://www.youtube.com/embed/8oIu0Yo7HPo" title="선물 클라우드 펀딩 및 상품 추천 - 이거사조" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Video Label](http://img.youtube.com/vi/8oIu0Yo7HPo/0.jpg)](https://www.youtube.com/watch?v=8oIu0Yo7HPo)
 
 
 ## 🛠 3. 기능 요약
