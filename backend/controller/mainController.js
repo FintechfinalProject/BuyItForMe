@@ -16,6 +16,12 @@ const output = {
     },
     register : (req,res)=>{
         res.render("home/register")
+    },
+    cart : (req,res)=>{
+        res.render("home/cart")
+    },
+    product : (req,res)=>{
+        res.render("home/product")
     }
 }
 

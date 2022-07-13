@@ -7,6 +7,8 @@ const ctrl = require("../controller/mainController");
 router.get('/', ctrl.output.main);
 router.get('/login', ctrl.output.login);
 router.get('/register', ctrl.output.register);
+router.get('/cart', ctrl.output.cart);
+router.get('/product', ctrl.output.product);
 
 router.post('/login', ctrl.process.login);
 router.post('/register', ctrl.process.register);
