@@ -9,11 +9,16 @@ const port = 3300;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+const PASSWORD=process.env.PASSWORD
+const DATABASE=process.env.DATABASE
+const CLIENT_ID=process.env.CLIENT_ID
+const CLIENT_SECRET=process.env.CLIENT_SECRET
+
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "",
-  database: "",
+  password: `${PASSWORD}`,
+  database: `${DATABASE}`,
 });
 
 // 사용자 인증
@@ -22,8 +27,8 @@ app.get("/api/token", (req, res) => {
   console.log("parsedCode는", parsedCode)
   const data = {
     code: parsedCode,
-    client_id: "df1a2d43-fa75-4bd9-822d-f03c71d1943d",
-    client_secret: "1ed0d5df-2cca-41fc-ae4f-9737217615a6",
+    client_id: `${CLIENT_ID}`,
+    client_secret: `${CLIENT_SECRET}`,
     redirect_uri: "http://localhost:3300/api/token",
     grant_type: "authorization_code",
   };

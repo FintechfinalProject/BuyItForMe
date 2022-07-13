@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "back": "cd back && nodemon server.js",
+    "back": "cd server && node index.js",
     "front": "cd front && npm start",
-    "start": "concurrently \"npm run back\" \"npm run front\" ",
+    "backend": "cd backend && npm start",
+    "start": "concurrently \"npm run back\" \"npm run front\" \"\" ",
     "postinstall": "(cd back && npm install) && (cd ../front && npm install)"
   },
   "repository": {

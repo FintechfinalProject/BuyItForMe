@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Stack, Button, Form } from 'react-bootstrap'
+import { Container, Row, Col, Button, Form } from 'react-bootstrap'
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 

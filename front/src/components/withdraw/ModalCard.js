@@ -21,7 +21,7 @@ const WithDrawButton = styled.button`
 const ModalCard = () => {
   const navigate = useNavigate()
   const handleClick = () => {
-    navigate('/funding')
+    navigate('/')
   }
 
   return (

@@ -9,6 +9,7 @@ import AuthResult from './pages/AuthResult';
 function App() {
   return (
     <div>
+      <NavBar/>
       <Routes>
         <Route path='/' element={<FundingDetail />} />
         <Route path='/payment' element={<Payment />} />
