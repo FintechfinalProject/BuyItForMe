@@ -1,0 +1,29 @@
+{
+  "name": "buyitforme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "back": "cd back && nodemon server.js",
+    "front": "cd front && npm start",
+    "start": "concurrently \"npm run back\" \"npm run front\" ",
+    "postinstall": "(cd back && npm install) && (cd ../front && npm install)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FintechfinalProject/BuyItForMe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FintechfinalProject/BuyItForMe/issues"
+  },
+  "homepage": "https://github.com/FintechfinalProject/BuyItForMe#readme",
+  "dependencies": {
+    "concurrently": "^7.2.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
