@@ -14,7 +14,8 @@
 
 
 ## 🔗 2. 구현
-<https://youtu.be/8oIu0Yo7HPo>
+<https://youtu.be/8oIu0Yo7HPo>  
+<br/>
 [![Video Label](http://img.youtube.com/vi/8oIu0Yo7HPo/0.jpg)](https://www.youtube.com/watch?v=8oIu0Yo7HPo)
 
 
