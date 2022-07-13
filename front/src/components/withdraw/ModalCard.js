@@ -13,7 +13,7 @@ const ModalCardBlock = styled.div`
 const WithDrawButton = styled.button`
   border: none;
   padding: 0.3rem;
-  background: #2aa450;
+  background: gray;
   color: white;
   margin-top: 0.3rem;
 `;

@@ -47,7 +47,7 @@ const AuthResult = () => {
         style={CustomStyles}
         onRequestClose={closeModal}
       >
-        <ModalWithdraw/>
+        <ModalWithdraw />
       </Modal>
     </div>
   );

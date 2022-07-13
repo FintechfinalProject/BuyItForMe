@@ -1,4 +1,6 @@
 import React from 'react'
+import { Container, Form, Button } from 'react-bootstrap';
+
 
 const Payment = () => {
   const handleClick = () => {
@@ -8,13 +10,21 @@ const Payment = () => {
   };
 
   return (
-    <div>
-      <div>Payment</div>
-      <input placeholder='선물하는 사람' /><br />
-      <input type="textbox" placeholder='메세지 입력'></input><br />
-      <button onClick={handleClick}>통장에서 결제하기</button><br />
-      <button>카카오페이 결제하기</button>
-    </div>
+    <Container>
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>From.</Form.Label>
+          <Form.Control type="email" placeholder="선물하는 사람의 이름을 입력해주세요." />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Label>축하 메세지</Form.Label>
+          <Form.Control as="textarea" rows={7} />
+        </Form.Group>
+        <Button variant="secondary" type="submit" onClick={handleClick}>
+          결제하기
+        </Button>
+      </Form>
+    </Container>
   )
 }
 

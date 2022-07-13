@@ -12,10 +12,11 @@ app.use(express.urlencoded({ extended: false }));
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "12341234",
-  database: "fintech",
+  password: "",
+  database: "",
 });
 
+// 사용자 인증
 app.get("/api/token", (req, res) => {
   const parsedCode = req.query.code;
   console.log("parsedCode는", parsedCode)

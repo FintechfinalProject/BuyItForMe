@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Container, Row, Col, Stack, Button, Form } from 'react-bootstrap'
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
 const Img = styled.img`
-  width: 300px;
+  width: 500px;
 `
 const FundingDetail = () => {
   const navigate = useNavigate()
@@ -12,14 +13,28 @@ const FundingDetail = () => {
   }
 
   return (
-    <div>
-      FundingDetail<br/>
-      <Img src='https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165665517440937643.jpg?gif=1&w=1280&h=1280&c=c&webp=1'/><br/>
-      펀딩 설명 어쩌구<br/>
-      남은 기한<br/>
-      달성률<br/>
-      <button onClick={handleClick}>선물하기</button>    
-    </div>
+    <Container>
+      <Row className="justify-content-md-center">
+        <Col>
+          <Img src='https://i.postimg.cc/MZRXZL2n/beige-bag.jpg' />
+        </Col>
+        <Col>
+          <h1>정태환 님의 선물을 모금해주세요.</h1><br />
+          <h3>남은 기한 ( ~ 2022 / 07 / 14 )</h3>
+          <Form.Range disabled="false" /><br />
+          <h3>달성률 ( 50% )</h3>
+          <Form.Range disabled="false" />
+        </Col>
+      </Row>
+      <br />
+      <Row style={{ maginTop: "50px" }}>
+        <h3>정태환님의 메세지</h3>
+        <Form.Control as="textarea" rows={10} disabled readOnly placeholder="저의 00번째 생일을 축하해주셔서 감사합니다." />
+      </Row>
+      <Row>
+        <Button variant="secondary" onClick={handleClick}>모금하기</Button>
+      </Row>
+    </Container>
   )
 }
 
