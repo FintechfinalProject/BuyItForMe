@@ -2,6 +2,9 @@ import React from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap'
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import FundingList from '../components/FundingList';
+
 
 const Img = styled.img`
   width: 500px;
@@ -11,6 +14,8 @@ const FundingDetail = () => {
   const handleClick = () => {
     navigate('/payment')
   }
+
+  const fundingList = useSelector(state => state.fundingList);
 
   return (
     <Container>
@@ -33,6 +38,11 @@ const FundingDetail = () => {
       </Row>
       <Row>
         <Button variant="secondary" onClick={handleClick}>모금하기</Button>
+      </Row>
+      <Row>
+        {fundingList.map((item)=>(
+          <FundingList item={item}/>
+        ))}
       </Row>
     </Container>
   )
